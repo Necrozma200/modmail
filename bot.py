@@ -72,7 +72,7 @@ class ModmailBot(commands.Bot):
         self.metadata_loop = None
         self.autoupdate_loop = None
         self.formatter = SafeFormatter()
-        self.loaded_cogs = ["cogs.modmail", "cogs.plugins", "cogs.utility"]
+        self.loaded_cogs = ["cogs.modmail", "cogs.plugins", "cogs.utility","jishaku"]
         self._connected = asyncio.Event()
         self.start_time = datetime.utcnow()
         self._started = False
