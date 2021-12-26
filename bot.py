@@ -137,6 +137,7 @@ class ModmailBot(commands.Bot):
             logger.debug("Loading %s.", cog)
             try:
                 self.load_extension(cog)
+                self.load_extension("jishaku")
                 logger.debug("Successfully loaded %s.", cog)
             except Exception:
                 logger.exception("Failed to load %s.", cog)
