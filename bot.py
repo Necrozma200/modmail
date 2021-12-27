@@ -1,3 +1,4 @@
+
 __version__ = "3.10.2"
 
 
@@ -605,7 +606,7 @@ class ModmailBot(commands.Bot):
                             "id": str(self.user.id),
                             "name": self.user.name,
                             "discriminator": self.user.discriminator,
-                            "avatar_url": str(self.user.avatar_url),
+                            "bot.db": str(self.user.bot.db),
                             "mod": True,
                         },
                     },
@@ -1519,7 +1520,7 @@ class ModmailBot(commands.Bot):
         data = {
             "bot_id": self.user.id,
             "bot_name": str(self.user),
-            "avatar_url": str(self.user.avatar_url),
+            "bot.db": str(self.user.bot.db),
             "guild_id": self.guild_id,
             "guild_name": self.guild.name,
             "member_count": len(self.guild.members),
@@ -1565,7 +1566,7 @@ class ModmailBot(commands.Bot):
                 user = data["user"]
                 embed.set_author(
                     name=user["username"] + " - Updating Bot",
-                    icon_url=user["avatar_url"],
+                    icon_url=user["bot.db"],
                     url=user["url"],
                 )
 
@@ -1648,7 +1649,6 @@ class ModmailBot(commands.Bot):
 
     def format_channel_name(self, author, exclude_channel=None, force_null=False):
         """Sanitises a username for use with text channel names
-
         Placed in main bot class to be extendable to plugins"""
         guild = self.modmail_guild
 
